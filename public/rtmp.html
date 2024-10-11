@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RTMP Stream</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="rtmp-container">
+        <div class="header">
+            <div id="welcomeMessage"></div>
+            <div class="dropdown">
+                <button id="dropdownButton">Menu</button>
+                <div id="dropdownContent" class="dropdown-content">
+                    <button id="logoutButton">Logout</button>
+                </div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="stream-container">
+                <video id="video" controls></video>
+                <div class="stream-options">
+                    <button id="stream1Button">HD Stream</button>
+                    <button id="stream2Button">SD Stream</button>
+                </div>
+            </div>
+            <div class="side-container">
+                <div class="tabs">
+                    <button class="tab-button active" onclick="openTab(event, 'liveChat')">Live Chat</button>
+                    <button class="tab-button" onclick="openTab(event, 'notes')">Notes</button>
+                    <button class="tab-button" onclick="openTab(event, 'bible')">Bible</button>
+                </div>
+                <div id="liveChat" class="tab-content">
+                    <div id="chatBox"></div>
+                    <input type="text" id="chatInput" placeholder="Type a message...">
+                    <button id="sendButton">Send</button>
+                </div>
+                <div id="notes" class="tab-content">
+                    <textarea id="notesArea" placeholder="Write your notes here..."></textarea>
+                </div>
+                <div id="bible" class="tab-content">
+                    <div id="bibleContent">
+                        <iframe src="https://www.bible.com/bible/111/GEN.1.NIV"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script src="rtmp.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICLC IN YOUR CITY</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <h1>ICLC IN YOUR CITY</h1>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <button id="loginButton">Login</button>
+        <div id="loginMessage" class="error-message"></div>
+    </div>
+    <script>
+        // Sample users data
+        const users = {
+            'ce_nairobi': '63115',
+            'ce_mombasa': '70659',
+            'ce_thika': '97618',
+            'ce_kisumu': '80914'
+        };
+
+        // Store users in localStorage
+        localStorage.setItem('users', JSON.stringify(users));
+
+        document.getElementById('loginButton').addEventListener('click', function() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const storedUsers = JSON.parse(localStorage.getItem('users'));
+
+            if (username.trim() && password.trim()) {
+                if (storedUsers[username] && storedUsers[username] === password) {
+                    sessionStorage.setItem('username', username);
+                    document.getElementById('loginMessage').textContent = 'Successfully logged in.';
+                    document.getElementById('loginMessage').style.color = 'green';
+                    setTimeout(() => {
+                        window.location.href = 'rtmp.html';
+                    }, 1000);
+                } else {
+                    document.getElementById('loginMessage').textContent = 'Invalid username or password.';
+                    document.getElementById('loginMessage').style.color = 'red';
+                }
+            } else {
+                document.getElementById('loginMessage').textContent = 'Please enter both username and password.';
+                document.getElementById('loginMessage').style.color = 'red';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,371 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 20px; /* Add padding to the body */
+}
+
+.login-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    animation: fadeIn 1s ease-in-out;
+}
+
+h1 {
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 24px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    text-align: left;
+    color: #666;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.error-message {
+    font-size: 14px;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    text-align: left; /* Align the error message to the left */
+    position: relative; /* Ensure it doesn't overlap other elements */
+    top: 10px; /* Adjust the position if necessary */
+}
+
+/* Keeping the logged-in page styles unchanged */
+.rtmp-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px; /* Add padding to the container */
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+
+#usernameDisplay {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#welcomeMessage {
+    font-weight: bold;
+    font-size: 18px;
+    color: #007bff;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+#dropdownButton {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#dropdownButton:hover {
+    background-color: #0056b3;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content button {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+}
+
+.dropdown-content button:hover {
+    background-color: #ddd;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+.stream-container {
+    width: 60%;
+    border: 2px solid #000;
+    margin-right: 20px;
+    padding: 10px; /* Add padding to the stream container */
+    box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+video {
+    width: 100%;
+    height: 100%;
+}
+
+.stream-options {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.stream-options button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.stream-options button.active {
+    background-color: #0056b3; /* Highlight active stream button */
+}
+
+.stream-options button:hover {
+    background-color: #0056b3;
+}
+
+.side-container {
+    width: 35%;
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.tab-button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 20px; /* More circular */
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 0 5px; /* Increase space between buttons */
+}
+
+.tab-button:hover {
+    background-color: #0056b3;
+}
+
+.tab-button.active {
+    background-color: #0056b3;
+}
+
+.tab-content {
+    display: none;
+    height: 100%;
+}
+
+#liveChat {
+    display: block;
+}
+
+#chatBox {
+    height: 200px;
+    overflow-y: scroll;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: left;
+}
+
+#chatInput {
+    width: 70%;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#sendButton {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#sendButton:hover {
+    background-color: #218838;
+}
+
+#notesArea {
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: none; /* Prevent resizing */
+}
+
+/* Chat message styling */
+.chat-message {
+    background-color: #e9ecef;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    display: inline-block;
+    max-width: 80%;
+}
+
+.chat-message strong {
+    color: #007bff;
+}
+
+.timestamp {
+    font-size: 12px;
+    color: #888;
+    margin-left: 10px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Bible Tab Styles */
+#bibleContent {
+    height: calc(100% - 40px); /* Adjust height to fit within the tab */
+    overflow: hidden;
+}
+
+#bibleContent iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login-container {
+        padding: 20px;
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    input, button {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .error-message {
+        font-size: 12px;
+    }
+
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stream-container, .side-container {
+        width: 90%;
+        margin: 10px 0;
+    }
+
+    .tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tab-button {
+        width: 80%;
+        margin: 5px 0;
+    }
+
+    #chatBox, #notesArea {
+        height: 150px;
+    }
+
+    #bibleContent {
+        height: auto; /* Adjust height for mobile */
+    }
+
+    #bibleContent iframe {
+        height: 400px; /* Adjust iframe height for mobile */
+    }
+}
